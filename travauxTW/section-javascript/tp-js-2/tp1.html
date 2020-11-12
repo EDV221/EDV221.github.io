@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+      <meta charset="utf-8">
+  </head>
+
+    <body>
+     <div id="timer">10</div>
+     <button id="#start">Start</button>
+     <button id="#reset">Start again</button>
+     <script>
+       const timerHTML=document.getElementById("timer");
+       function timer()
+       {
+         let startTime=10;
+         timerID=setInterval(function(){
+           startTime-=1;
+           if(startTime<=0)
+           {
+             clearInterval(timerID);
+           }
+           timerHTML.innerHTML=startTime;
+         },1000);
+       }
+
+       function reset()
+       {
+         clearInterval(timerID);
+         startTime=10;
+         timerHTML.innerHTML=startTime;
+       }
+       document.getElementById("#start").addEventListener('click', timer);
+       document.getElementById("#reset").addEventListener('click', reset);
+       </script<
+     </body>
+</html>

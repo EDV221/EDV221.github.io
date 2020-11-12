@@ -1,58 +1,131 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="fr">
 
-    <title>Accueil</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+<head>
 
-  </head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  <body>
-    <header>
-      <h1>Page d'accueil</h1>
-    </header>
+  <title>Technologies WEB</title>
 
-    <nav>
-      <ul>
-        <li><a href="./index.html">Acueil</a></li>
-        <li><a href="./index.html">Qui suis-je</a></li>
-      </ul>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-     </nav>
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
 
-     <main>
-      <article>
-        <h2>Mes travaux en Technologies Web</h2>
-        <p>Le but de cette séance de Travaux Pratiques est de composer un site web qui vous permettra de naviguer à travers vos réalisations.</p>
+</head>
 
-        <h3>Ce qu'il faut faire</h3>
-        <p>Modifiez la page courante pour en faire la page d'accueil de votre site. Cette page permettra l'accès à des catégories de travaux : HTML / JS / PHP / Vue. Chaque catégorie aura sa page d'accueil, sur le même format. Ces pages d'acceuil pointeront vers des pages réalisées en cours. Par exemple, la catégorie HTML contiendra une page affichant une image et une autre contenant un élément vidéo.  Attention, vous réfléchirez à l'arborescence de votre répertoire pour assurer l'uniformité de la présentation.
-        </p>
+<body id="page-top">
 
-        <h3>Bonus</h3>
-        <ul>
-          <li>Modifiez la CSS à votre goût.</li>
-          <li>Créez une page "qui suis-je" avec votre CV</li>
-          <li>Quel type de copyright devriez vous mettre?</li>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"> Travaux en Technologies WEB</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#html">HTML</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#javascript">JavaScript</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#php">PHP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#vue">Vue</a>
+          </li>
         </ul>
-      </article>
+      </div>
+    </div>
+  </nav>
 
-      <aside>
-        <h2>Catégories</h2>
-        <ul>
-          <li><a href="./page1.html">HTML</a></li>
-          <li><a href="./page2.html">JavaScript</a></li>
-          <li><a href="./page3.html">PHP</a></li>
-          <li><a href="./page4.html">Vue</a></li>
-        </ul>
-      </aside>
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Travaux en Technologies WEB</h1>
+      <p class="lead"></p>
+    </div>
+  </header>
 
-    </main>
+  <section id="html">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>HTML</h2>
+          <p class="lead">Tous mes travaux "HTML", ci-dessous :</p>
+          <ul>
+            <li class="nav-item">
+              <a href="travauxTW/section-html-css/tp-css-1/index.html">TP CSS N°1</a>
+            </li>
+            <li>
+              <a href="travauxTW/section-html-css/tp-html-1/index.html">TP HTML N°1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-      <p>©Copyright 2020 Edouard VIEILLARD IMR1 Enssat</p>
-    </footer>
+  <section id="javascript" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>JavaScript</h2>
+          <p class="lead">Tous mes travaux "JS", ci-dessous :</p>
+          <li class="nav-item">
+            <a href="travauxTW/section-javascript/tp-js-2/tp1.html">TP JS N°2</a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </body>
+  <section id="php">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>PHP</h2>
+          <p class="lead">Tous mes travaux "PHP", ci-dessous :</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vue" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Vue</h2>
+          <p class="lead">Tous mes trvaux "Vue", ci-dessous :</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Edouard VIEILLARD 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+
+</body>
+
 </html>
