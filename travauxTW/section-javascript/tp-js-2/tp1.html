@@ -23,14 +23,8 @@
          },1000);
        }
 
-       function reset()
-       {
-         clearInterval(timerID);
-         startTime=10;
-         timerHTML.innerHTML=startTime;
-       }
        document.getElementById("#start").addEventListener('click', timer);
-       document.getElementById("#reset").addEventListener('click', reset);
+       document.getElementById("#reset").addEventListener('click', timer);
        </script>
      </body>
 </html>
