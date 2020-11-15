@@ -1,0 +1,17 @@
+<html>
+	<head>
+	<script type="text/javascript">
+		function init()
+		{
+			laDiv1=document.createElement('div');
+			laDiv1.setAttribute('id','div1');
+			laDiv2=document.getElementById('div2');
+			laDiv1.setAttribute('style',"border-color:red; border-style: dotted;");
+			laDiv2.appendChild(laDiv1);
+		}
+	</script>
+	</head>
+	<body onload='init()'>
+		<div id='div2' style="border-color:black; border-style: solid;"></div>
+	</body>
+</html>
