@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<!-- CSS -->
 		<style type="text/css">
 			#navlist{position:relative;}
 			#navlist li{margin:0;padding:0;list-style:none;position:absolute;top:0;}
@@ -7,14 +8,15 @@
 			#play{left:0px;width:47px;}
 			#play{background-image:url("image.jpg"); border:black; border-width: 1px; width:300px; height:300px!important; background-repeat:no-repeat; background-size:300px 300px}
 		</style>
+		<!-- CSS -->
 		<SCRIPT LANGUAGE="Javascript" SRC="geometrie/point.js"></SCRIPT>
-		<script> 
-			var i=1; 
-			var j=1; 
-			var aCanvas;
+		<script>
+			var i=1;
+			var j=1;
+			var Canvas;
 			function init()
 			{
-				aCanvas=document.getElementById('myCanvas');
+				Canvas=document.getElementById('myCanvas');
 			}
 
 			function updateCanvas()
@@ -25,7 +27,7 @@
 						i=1;
 						j++;
 					}
-					point1=new Point(20*i,20*j,aCanvas);
+					point1=new Point(20*i,20*j,Canvas);
 					point1.ache();
 					i++;
 				}

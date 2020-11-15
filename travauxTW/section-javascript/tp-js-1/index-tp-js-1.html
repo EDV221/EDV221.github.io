@@ -84,7 +84,7 @@
             <li class="nav-item">
               <a href="exo1.html">Exercice n°1</a>
             </li>
-          <p>Création d'une alerte sur une page WEB</p>
+          <p>Création d'une alerte sur une page WEB.</p>
         </div>
       </div>
     </div>
@@ -99,7 +99,7 @@
           <li class="nav-item">
             <a href="exo2.html">Exercice n°2</a>
           </li>
-          <p>Création d'une alerte sur une page WEB avec manipulation de variables</p>
+          <p>Création d'une alerte sur une page WEB avec manipulation de variables.</p>
         </div>
       </div>
     </div>
@@ -114,6 +114,8 @@
           <li class="nav-item">
             <a href="exo3.html">Exercice n°3</a>
           </li>
+          <p>Création d'un rectangle rempli de raillure rouge grâce à la fonction
+          "appenChild", permettant d'affecter un noeud parent à un noeud enfant.</p>
         </div>
       </div>
     </div>
@@ -128,6 +130,7 @@
           <li class="nav-item">
             <a href="exo4/exo4.html">Exercice n°4</a>
           </li>
+          <p>Affiche une grille de cercle noir non rempli.
         </div>
       </div>
     </div>
@@ -142,6 +145,9 @@
           <li class="nav-item">
             <a href="exo5/exo5.html">Exercice n°5</a>
           </li>
+          <p>Met à jour le canevas après avoir cliquer sur une photo, en
+          ajoutant des cercles noir non rempli.
+          </p>
         </div>
       </div>
     </div>
@@ -153,9 +159,12 @@
         <div class="col-lg-8 mx-auto">
           <h2>Exercice n°6</h2>
           <p class="lead">Un player audio</p>
-          <li class="nav-item">
-            <a href="ex6.html">Exercice n°6</a>
-          </li>
+          <audio id="player" controls preload tabindex="0" ontimeupdate="updateCanvas()">
+            <source type="audio/wav" src="./audioles/myWav.wav"/>
+            <source type="audio/mp3" src="exo6/HaTom-Go.mp3"/>
+            <!--Musique libre de droit https://www.auboutdufil.com/index.php?id=589-->
+            Your  browser does not support HTML5 audio.
+          </audio>
         </div>
       </div>
     </div>

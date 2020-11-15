@@ -5,13 +5,17 @@
 		{
 			laDiv1=document.createElement('div');
 			laDiv1.setAttribute('id','div1');
-			laDiv2=document.getElementById('div2');
+			//laDiv2=document.getElementById('div2');
+			laDiv2=document.querySelector(".div2");
 			laDiv1.setAttribute('style',"border-color:red; border-style: dotted;");
+			laDiv1.innerHTML='<p>Insertion du texte ici</p>'
 			laDiv2.appendChild(laDiv1);
 		}
 	</script>
 	</head>
 	<body onload='init()'>
-		<div id='div2' style="border-color:black; border-style: solid;"></div>
+		<!--<div id='div2' style="border-color:black; border-style: solid;"></div>-->
+		<div class="div2" style="border-color:black; border-style: solid;"></div>
+		<a href="index-tp-js-1.html">Retour</a>
 	</body>
 </html>
