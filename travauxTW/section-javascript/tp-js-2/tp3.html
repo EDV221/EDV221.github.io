@@ -29,8 +29,12 @@
               ctx.fillStyle = 'red';
               ctx.fillRect(x, 0, 50, 50);
             }
-            window.addEventListener('load', square);
 
+            window.addEventListener('load', () => {
+              setTimeout(function(){
+                square();
+                },2000);
+              });
         </script>
     </body>
 </html>
