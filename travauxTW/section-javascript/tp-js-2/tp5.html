@@ -2,7 +2,7 @@
 <html>
     <head></head>
     <body>
-        <canvas id="canva" width="500" height="1000"></canvas>
+        <canvas id="canva" width="1000" height="1000"></canvas>
         <script>
             class Square
             {
@@ -50,22 +50,40 @@
            let canva=document.getElementById('canva');
            let ctx=canva.getContext('2d');
 
-           let squareOne=new Square(0, 0, ctx, 2);
+           let squareOne=new Square(0, 0, ctx, 0);
+           let squareTwo=new Square(0, 75, ctx, 2);
+           let squareThree=new Square(0, 150, ctx, 4);
+           let squareFour=new Square(0, 225, ctx, 6);
+           let squareFive=new Square(0, 300, ctx, 8);
+           let squareSix=new Square(0, 375, ctx, 10);
+           let squareSeven=new Square(0, 450, ctx, 12);
+           let squareEight=new Square(0, 525, ctx, 14);
+           let squareNine=new Square(0, 600, ctx, 16);
+           let squareTeen=new Square(0, 675, ctx, 18);
 
            let timer=0;
            let sec=window.setInterval(chrono, 100);
 
         	 function chrono()
            {
-             if(timer<=20)
+             if(timer<=60)
              {
                squareOne.move(timer);
+               squareTwo.move(timer);
+               squareThree.move(timer);
+               squareFour.move(timer);
+               squareFive.move(timer);
+               squareSix.move(timer);
+               squareSeven.move(timer);
+               squareEight.move(timer);
+               squareNine.move(timer);
+               squareTeen.move(timer);
+               timer++;
              }
              else
              {
                clearInterval(sec);
              }
-             timer++;
         	 }
         </script>
     </body>

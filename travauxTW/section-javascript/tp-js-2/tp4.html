@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <canvas id="canva" width="500" height="1000"></canvas>
+        <script>
+          class Square
+          {
+            constructor(x, y, ctx, timerToStart){
+             this.x=x;
+             this.y=y;
+             this.ctx=ctx;
+             this.ctx.fillStyle='red'
+             this.ctx.fillRect(x, y, 50, 50);
+             this.timerToStart=timerToStart;
+           }
+
+           move(timer)
+           {
+             this.delet(timer);
+             this.updatePosition(timer);
+             this.draw(timer);
+             if (this.x+50>= canva.width-50)
+             {
+               clearInterval(sec);
+             }
+           }
+
+           updatePosition(timer)
+           {
+             if(timer>=this.timerToStart)
+             {
+               this.x = this.x + 20;
+             }
+           }
+
+           delet(timer)
+           {
+             if (timer>=this.timerToStart)
+             {
+               this.ctx.clearRect(this.x, this.y, 50, 50);
+             }
+           }
+
+           draw(timer)
+           {
+             if (timer>=this.timerToStart)
+             {
+             this.ctx.fillRect(this.x, this.y, 50, 50);
+             }
+           }
+          }
+
+          let canva=document.getElementById('canva');
+          let ctx=canva.getContext('2d');
+
+          let squareOne=new Square(0, 0, ctx, 0);
+          let squareTwo=new Square(0, 75, ctx, 1);
+          let squareThree=new Square(0, 150, ctx, 4);
+
+          let timer=0;
+          let sec=window.setInterval(chrono, 100);
+
+          function chrono()
+          {
+           squareOne.move(timer);
+           squareTwo.move(timer);
+           squareThree.move(timer);
+           timer++;
+          }
+
+            /*class Square
+            {
+              constructor(x, y, ctx){
+               this.x=x;
+               this.y=y;
+               this.ctx=ctx;
+               this.ctx.fillStyle='red';
+               this.ctx.fillRect(x, y, 50, 50);
+             }
+
+             move()
+             {
+               let sec=setInterval(()=>{
+               this.delet();
+               this.updatePosition();
+               this.draw();
+               if (this.x+50>=canva.width-10)
+               {
+                 clearInterval(sec);
+               }
+               },100);
+             }
+
+             updatePosition()
+             {
+                 this.x=this.x+20;
+             }
+
+             delet()
+             {
+                 this.ctx.clearRect(this.x, this.y, 50, 50);
+             }
+
+             draw()
+             {
+               this.ctx.fillRect(this.x, this.y, 50, 50);
+             }
+           }
+
+           let canva=document.getElementById('canva');
+           let ctx=canva.getContext('2d');
+
+           window.addEventListener('load', ()=>{
+             let squareOne=new Square(0, 0, ctx);
+             let squareTwo=new Square(0, 75, ctx);
+             let squareThree=new Square(0, 150, ctx);
+
+             setTimeout(()=>{squareOne.move()}, 1000);
+             setTimeout(()=>{squareTwo.move()}, 2000);
+             setTimeout(()=>{squareTwo.move()}, 3000);
+           });*/
+        </script>
+    </body>
+</html>
