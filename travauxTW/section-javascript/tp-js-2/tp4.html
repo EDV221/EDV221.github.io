@@ -2,74 +2,9 @@
 <html>
     <head></head>
     <body>
-        <canvas id="canva" width="500" height="1000"></canvas>
+        <canvas id="canva" width="500" height="500"></canvas>
         <script>
-          class Square
-          {
-            constructor(x, y, ctx, timerToStart){
-             this.x=x;
-             this.y=y;
-             this.ctx=ctx;
-             this.ctx.fillStyle='red'
-             this.ctx.fillRect(x, y, 50, 50);
-             this.timerToStart=timerToStart;
-           }
-
-           move(timer)
-           {
-             this.delet(timer);
-             this.updatePosition(timer);
-             this.draw(timer);
-             if (this.x+50>= canva.width-50)
-             {
-               clearInterval(sec);
-             }
-           }
-
-           updatePosition(timer)
-           {
-             if(timer>=this.timerToStart)
-             {
-               this.x = this.x+10;
-             }
-           }
-
-           delet(timer)
-           {
-             if (timer>=this.timerToStart)
-             {
-               this.ctx.clearRect(this.x, this.y, 50, 50);
-             }
-           }
-
-           draw(timer)
-           {
-             if (timer>=this.timerToStart)
-             {
-             this.ctx.fillRect(this.x, this.y, 50, 50);
-             }
-           }
-          }
-
-          let canva=document.getElementById('canva');
-          let ctx=canva.getContext('2d');
-
-          let squareOne=new Square(0, 0, ctx, 0);
-          let squareTwo=new Square(0, 75, ctx, 1);
-          let squareThree=new Square(0, 150, ctx, 4);
-
-          let timer=0;
-          let sec=window.setInterval(chrono, 100);
-
-          function chrono()
-          {
-           squareOne.move(timer);
-           squareTwo.move(timer);
-           squareThree.move(timer);
-           timer++;
-          }
-
-            /*class Square
+            class Square
             {
               constructor(x, y, ctx){
                this.x=x;
@@ -111,15 +46,15 @@
            let canva=document.getElementById('canva');
            let ctx=canva.getContext('2d');
 
-           window.addEventListener('load', ()=>{
-             let squareOne=new Square(0, 0, ctx);
-             let squareTwo=new Square(0, 75, ctx);
-             let squareThree=new Square(0, 150, ctx);
+           window.addEventListener('load', (event)=>{
+             let square1=new Square(0, 0, ctx);
+             let square2=new Square(0, 75, ctx);
+             let square3=new Square(0, 150, ctx);
 
-             setTimeout(()=>{squareOne.move()}, 1000);
-             setTimeout(()=>{squareTwo.move()}, 2000);
-             setTimeout(()=>{squareTwo.move()}, 3000);
-           });*/
+             setTimeout(()=>{square1.move()}, 1000);
+             setTimeout(()=>{square2.move()}, 2000);
+             setTimeout(()=>{square3.move()}, 3000);
+           });
         </script>
     </body>
 </html>

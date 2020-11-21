@@ -2,89 +2,66 @@
 <html>
     <head></head>
     <body>
-        <canvas id="canva" width="1000" height="1000"></canvas>
+        <canvas id="canva" width="500" height="500"></canvas>
         <script>
-            class Square
-            {
-              constructor(x, y, ctx, timerToStart){
-               this.x=x;
-               this.y=y;
-               this.ctx=ctx;
-               this.ctx.fillStyle='red'
-               this.ctx.fillRect(x, y, 50, 50);
-               this.timerToStart=timerToStart;
-             }
-
-             move(timer)
-             {
-               this.delet(timer);
-               this.updatePosition(timer);
-               this.draw(timer);
-             }
-
-             updatePosition(timer)
-             {
-               if(timer>=this.timerToStart)
-               {
-                 this.x = this.x + 20;
-               }
-             }
-
-             delet(timer)
-             {
-               if (timer>=this.timerToStart)
-               {
-                 this.ctx.clearRect(this.x, this.y, 50, 50);
-               }
-             }
-
-             draw(timer)
-             {
-               if (timer>=this.timerToStart)
-               {
-               this.ctx.fillRect(this.x, this.y, 50, 50);
-               }
-             }
+          class Square
+          {
+            constructor(x, y, ctx, timeout){
+             this.x=x;
+             this.y=y;
+             this.ctx=ctx;
+             this.ctx.fillStyle='red';
+             this.ctx.fillRect(x, y, 25, 25);
+             this.timeout=timeout;
            }
 
-           let canva=document.getElementById('canva');
-           let ctx=canva.getContext('2d');
-
-           let squareOne=new Square(0, 0, ctx, 0);
-           let squareTwo=new Square(0, 75, ctx, 2);
-           let squareThree=new Square(0, 150, ctx, 4);
-           let squareFour=new Square(0, 225, ctx, 6);
-           let squareFive=new Square(0, 300, ctx, 8);
-           let squareSix=new Square(0, 375, ctx, 10);
-           let squareSeven=new Square(0, 450, ctx, 12);
-           let squareEight=new Square(0, 525, ctx, 14);
-           let squareNine=new Square(0, 600, ctx, 16);
-           let squareTeen=new Square(0, 675, ctx, 18);
-
-           let timer=0;
-           let sec=window.setInterval(chrono, 100);
-
-        	 function chrono()
+           move()
            {
-             if(timer<=60)
-             {
-               squareOne.move(timer);
-               squareTwo.move(timer);
-               squareThree.move(timer);
-               squareFour.move(timer);
-               squareFive.move(timer);
-               squareSix.move(timer);
-               squareSeven.move(timer);
-               squareEight.move(timer);
-               squareNine.move(timer);
-               squareTeen.move(timer);
-               timer++;
-             }
-             else
+             let sec=setInterval(()=>{
+             this.delet();
+             this.updatePosition();
+             this.draw();
+             if (this.x+25>=canva.width-10)
              {
                clearInterval(sec);
              }
-        	 }
+             },100);
+           }
+
+           updatePosition()
+           {
+               this.x=this.x+20;
+           }
+
+           delet()
+           {
+               this.ctx.clearRect(this.x, this.y, 25, 25);
+           }
+
+           draw()
+           {
+             this.ctx.fillRect(this.x, this.y, 25, 25);
+           }
+
+           star()
+           {
+             this.draw();
+             setTimeout(() => {
+                this.move();
+              }, this.timeout);
+            }
+           }
+
+         let canva=document.getElementById('canva');
+         let ctx=canva.getContext('2d');
+
+         window.addEventListener('load', (event)=>{
+           for(let i = 0; i < 10; i++)
+           {
+               let square = new Square(25, 25+i*30, ctx, 1000 * i);
+               square.star();
+           }
+         });
         </script>
     </body>
 </html>
