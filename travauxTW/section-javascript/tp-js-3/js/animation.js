@@ -11,8 +11,8 @@ let sprite=new Image();
 sprite.onload=animate;
 sprite.src="imgs/shell.png";
 
-let canvas=document.getElementById("canvas"),
-    context=canvas.getContext("2d");
+let canvas=document.getElementById("canvas");
+let context=canvas.getContext("2d");
 
 canvas.width=width*ratio;
 canvas.height=height*ratio;
