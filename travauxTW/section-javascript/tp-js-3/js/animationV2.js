@@ -166,7 +166,7 @@ function clearMouseMovement()
     console.log("clear");
 }
 
-function clampMouseClick(mouseX, mouseY)
+function MouseClick(mouseX, mouseY)
 {
     isStopped = false;
     toPosX = mouseX;
@@ -271,7 +271,7 @@ window.addEventListener("keyup", (event) => {
 canvas.addEventListener('mouseup', (event) => {
     if (event.defaultPrevented) return;
 
-    clampMouseClick(Math.floor(event.clientX - rect.left), Math.floor(event.clientY - rect.top));
+    MouseClick(Math.floor(event.clientX - rect.left), Math.floor(event.clientY - rect.top));
 
     event.preventDefault();
 }, true);
