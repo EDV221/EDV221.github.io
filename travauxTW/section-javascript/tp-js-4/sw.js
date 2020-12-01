@@ -1,34 +1,28 @@
-this.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open('v1').then(function(cache) {
-      return cache.addAll([
-        '/sw-test/',
-        '/sw-test/index-tp-js-4.html',
-      ]);
-    })
-  );
+const cacheName = 'tpJsSw';
+
+let cors_url = 'https://cors-anywhere.herokuapp.com/';
+let urlEDT = 'https://planning.univ-rennes1.fr/jsp/custom/modules/plannings/9EYlGR3a.shu';
+
+
+let cacheResources = [
+    '/travauxTW/section-javascript/tp-js-4/',
+    '/travauxTW/section-javascript/tp-js-4/app.js',
+    cors_url + urlEDT
+];
+
+this.addEventListener('install', (event) => {
+    event.waitUntil(
+        caches.open(cacheName).then((cache) => {
+            return cache.addAll(cacheResources);
+        })
+    );
 });
 
-this.addEventListener('fetch', function(event) {
-  event.respondWith(caches.match(event.request).then(function(response) {
-    // caches.match() always resolves
-    // but in case of success response will have value
-    if (response !== undefined) {
-      return response;
-    } else {
-      return fetch(event.request).then(function (response) {
-        // response may be used only once
-        // we need to save clone to put one copy in cache
-        // and serve second one
-        let responseClone = response.clone();
-
-        caches.open('v1').then(function (cache) {
-          cache.put(event.request, responseClone);
-        });
-        return response;
-      }).catch(function () {
-        return caches.match('/sw-test/gallery/myLittleVader.jpg');
-      });
-    }
-  }));
+this.addEventListener("fetch", (event) => {
+    console.log('fetched');
+    event.respondWith(
+        caches.match(event.request).then((response) => {
+            return response || fetch(event.request);
+        })
+    );
 });
