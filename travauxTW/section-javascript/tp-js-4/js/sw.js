@@ -5,7 +5,7 @@ let urlEDT = 'https://planning.univ-rennes1.fr/jsp/custom/modules/plannings/9EYl
 
 
 let cacheResources = [
-    '/travauxTW/section-javascript/tp-js-4/',
+    '/travauxTW/section-javascript/tp-js-4/js/',
     '/travauxTW/section-javascript/tp-js-4/js/app.js',
     cors_url + urlEDT
 ];
