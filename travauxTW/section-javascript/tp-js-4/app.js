@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
       return response.text();
   }).then(function(text){
     //console.log("It Works!");
-    document.getElementByID("calendar").innerHTML = text;
+    text=document.getElementByID('calendar').innerHTML;
     //console.log(text);
   });
 });
