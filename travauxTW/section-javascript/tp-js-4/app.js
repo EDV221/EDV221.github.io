@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
   let url = 'https://planning.univ-rennes1.fr/jsp/custom/modules/plannings/9EYlGR3a.shu';
 
 
-  fetch( cors_url + url ).then(function(response){
+  fetch(cors_url + url).then(function(response){
       return response.text();
   }).then(function(text){
     //console.log("It Works!");
