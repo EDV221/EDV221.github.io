@@ -17,7 +17,7 @@ window.addEventListener('load', () => {
 
 function registerSW() {
  if ('serviceWorker' in navigator) {
-   navigator.serviceWorker.register('/travauxTW/section-javascript/tp-js-4/sw.js', { scope: '/travauxTW/section-javascript/tp-js-4/' }).then((reg) => {
+   navigator.serviceWorker.register('/travauxTW/section-javascript/tp-js-4/js/sw.js', { scope: '/travauxTW/section-javascript/tp-js-4/' }).then((reg) => {
        // registration worked
        console.log('Registration succeeded. Scope is ' + reg.scope);
    }).catch((error) => {
